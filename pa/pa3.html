@@ -276,18 +276,18 @@
                 as
                 the user “victim”:
             </p>
-            <h3>1.0 No defenses</h3>
+            <h3>1.0 No defenses (2 points)</h3>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/sqlinject0">https://bungle.sysnet.ucsd.edu/sqlinject0</a> </p>
             <p><b>Submission</b>: sql_0.txt </p>
-            <h3>1.1 Simple escaping</h3>
+            <h3>1.1 Simple escaping (2 points)</h3>
             <p>
                 The server escapes single quotes (') in the inputs by replacing them with two single quotes.
             </p>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/sqlinject1">https://bungle.sysnet.ucsd.edu/sqlinject1</a></p>
             <p><b>Submission</b>: sql_1.txt</p>
-            <h3>1.2 Escaping and Hashing [Extra Credit] </h3>
+            <h3>1.2 Escaping and Hashing [Extra Credit] (1 point) </h3>
             <p>
                 The server uses the following PHP code, which escapes the username and applies the MD5 hash function to
                 the
@@ -314,7 +314,7 @@ if (isset($_POST['username']) and isset($_POST['password'])) {
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/sqlinject2">https://bungle.sysnet.ucsd.edu/sqlinject2</a></p>
             <p><b>Submission</b>: sql_2.txt, sql_2-src directory (see below for specification)</p>
-            <h3>1.3 The SQL [Extra credit]</h3>
+            <h3>1.3 The SQL [Extra credit] (1 point)</h3>
 
             <p>
                 This target uses a different database. Your job is to use SQL injection to retrieve:
@@ -422,7 +422,7 @@ Secret: secret string
                 code that implements each defense is shown below, along with the target URL and the filename you should
                 submit.
             </p>
-            <h4>2.0 No defenses</h4>
+            <h4>2.0 No defenses (2 points)</h4>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/search?xssdefense=0">https://bungle.sysnet.ucsd.edu/search?xssdefense=0</a>
             </p>
@@ -433,7 +433,7 @@ Secret: secret string
                 the
                 URL). Save it in a file named xss_payload.html.
             </p>
-            <h4>2.1 Remove “script”</h4>
+            <h4>2.1 Remove “script” (2 points)</h4>
             <code> filtered = re.sub(r"(?i)script", "", input) </code>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/search?xssdefense=1">https://bungle.sysnet.ucsd.edu/search?xssdefense=1</a>
@@ -441,7 +441,7 @@ Secret: secret string
             <p><b>Submission</b>: xss_1.txt </p>
 
 
-            <h4>2.2 Remove several tags</h4>
+            <h4>2.2 Remove several tags (2 points)</h4>
             <code>
             filtered = re.sub(r&quot;(?i)script|&lt;img|&lt;body|&lt;style|&lt;meta|&lt;embed|&lt;object&quot;,
             &quot;&quot;, input)
@@ -449,14 +449,14 @@ Secret: secret string
             <p><b>Target</b>: <a href="https://bungle.sysnet.ucsd.edu/search?xssdefense=2">https://bungle.sysnet.ucsd.edu/search?xssdefense=2</a> </p>
             <p><b>Submission</b>: xss_2.txt </p>
 
-            <h4>2.3 Remove some punctuation</h4>
+            <h4>2.3 Remove some punctuation (2 points)</h4>
             <code>filtered = re.sub(r"[;'\"]", "", input)</code>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/search?xssdefense=3">https://bungle.sysnet.ucsd.edu/search?xssdefense=3</a>
             </p>
             <p><b>Submission</b>: xss_3.txt </p>
 
-            <h4>2.4 Encode &lt; and &gt; [Extra credit]</h4>
+            <h4>2.4 Encode &lt; and &gt; [Extra credit] (1 point)</h4>
             <code>filtered = input.replace("&lt;", "&amp;lt;").replace("&gt;", "&amp;gt;")</code>
             <p><b>Target</b>: <a
                     href="https://bungle.sysnet.ucsd.edu/search?xssdefense=4">https://bungle.sysnet.ucsd.edu/search?xssdefense=4</a>
@@ -505,12 +505,12 @@ Secret: secret string
                 project. After all, most users won’t immediately notice.)
             </p>
             <h3>
-                3.0 No defenses
+                3.0 No defenses (2 points)
             </h3>
             <p><b>Target</b>: <a href="https://bungle.sysnet.ucsd.edu/login?csrfdefense=0&xssdefense=4">https://bungle.sysnet.ucsd.edu/login?csrfdefense=0&xssdefense=4</a></p>
             <p><b>Submission</b>: csrf_0.html </p>
 
-            <h3>3.1 Token validation</h3>
+            <h3>3.1 Token validation (2 points) </h3>
             <p>
                 The server sets a cookie named csrf_token to a random 16-byte value and also includes this value as a
                 hidden
@@ -522,7 +522,7 @@ Secret: secret string
             <p><b>Target</b>: <a href="https://bungle.sysnet.ucsd.edu/login?csrfdefense=1&xssdefense=0">https://bungle.sysnet.ucsd.edu/login?csrfdefense=1&xssdefense=0</a></p>
             <p><b>Submission</b>: csrf_1.html </p>
 
-            <h3>3.2 Token validation, without XSS [Extra credit]</h3>
+            <h3>3.2 Token validation, without XSS [Extra credit] (1 point)</h3>
             <p>Accomplish the same task as in 3.1 without using XSS.</p>
             <p><b>Target</b>: <a href="https://bungle.sysnet.ucsd.edu/login?csrfdefense=1&xssdefense=4">https://bungle.sysnet.ucsd.edu/login?csrfdefense=1&xssdefense=4</a></p>
             <p><b>Submission</b>: csrf_2.html </p>
@@ -546,7 +546,7 @@ Secret: secret string
             </p>
 
             <hr />
-            <h2>Part 4. Writeup: Better Defenses</h2>
+            <h2>Part 4. Writeup: Better Defenses (4 points)</h2>
             <p>
                 For each of the three kinds of attacks (SQL injection, XSS, and CSRF), write a paragraph of advice for
                 the
